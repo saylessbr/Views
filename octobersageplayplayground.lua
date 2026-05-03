@@ -359,7 +359,7 @@ local kb_mob_esp = nil
 local kb_show_health = nil
 local lastToggleState = false
 
-UI.AddTab("Passive Agility", function(tab)
+UI.AddTab("AgeplayPlayground", function(tab)
     local sec = tab:Section("Settings", "Left")
     sec:Toggle("agility_on", "Agility Spoof")
     kb_toggle = sec:Keybind("agility_toggle_kb", 0x70, "click")
