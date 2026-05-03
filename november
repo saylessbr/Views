@@ -211,6 +211,21 @@ local function safeWorldToScreen(pos)
     return nil, false
 end
 
+spawn(function()
+    while true do
+        wait(10)
+        if not UI.GetValue("esp_on") then continue end
+        local playerNameSet = getPlayerNameSet()
+        for _, model in ipairs(live:GetChildren()) do
+            local name = model.Name
+            if not playerNameSet[name] then continue end
+            if name == localPlayer.Name then continue end
+            if not espLabels[name] then
+                createESPLabel(name)
+            end
+        end
+    end
+end)
 -- Player ESP loop
 spawn(function()
     while true do
